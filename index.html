@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The BIZ Fest — Business · Entrepreneurship · Education</title>
+<meta name="description" content="The BIZ Fest — an event brand for business, entrepreneurship, and education. Connect on LinkedIn.">
+<meta name="theme-color" content="#14171A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14171A;
+    --glow:#1C2126;
+    --teal:#2DD4BF;
+    --teal-hover:#14B8A6;
+    --teal-light:#5EEAD4;
+    --text:#F5F6F7;
+    --muted:#8B939B;
+    --footer:#4B5157;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+
+  html,body{height:100%;}
+
+  body{
+    margin:0;
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(1.25rem,5vw,3rem);
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 45%, var(--glow) 0%, rgba(28,33,38,0) 70%),
+      var(--bg);
+    color:var(--text);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  main{
+    position:relative;
+    width:100%;
+    max-width:56rem;
+    text-align:center;
+  }
+
+  /* ---- Signature detail: two thin teal rings pulsing outward ---- */
+  .rings{
+    position:absolute;
+    top:44%;
+    left:50%;
+    width:min(30rem,78vw);
+    aspect-ratio:1;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .ring{
+    position:absolute;
+    inset:0;
+    border:1px solid var(--teal);
+    border-radius:50%;
+    opacity:0;
+    transform:scale(.35);
+    animation:pulse 14s cubic-bezier(.22,.61,.36,1) infinite;
+  }
+  .ring--2{animation-delay:7s;}
+
+  @keyframes pulse{
+    0%   {transform:scale(.35); opacity:0;}
+    12%  {opacity:.22;}
+    60%  {opacity:.07;}
+    100% {transform:scale(1); opacity:0;}
+  }
+
+  /* ---- Content ---- */
+  .content{position:relative;z-index:1;}
+
+  .eyebrow{
+    margin:0;
+    font-size:clamp(.5625rem,1.6vw,.75rem);
+    font-weight:500;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+
+  .wordmark{
+    margin:clamp(1.5rem,5vh,2.75rem) 0 0;
+    font-family:"Space Grotesk","Inter",sans-serif;
+    line-height:1;
+  }
+  .wordmark__the{
+    display:block;
+    font-size:clamp(.75rem,2.4vw,1.125rem);
+    font-weight:500;
+    letter-spacing:.5em;
+    text-indent:.5em;
+    color:var(--text);
+    text-transform:uppercase;
+  }
+  .wordmark__biz{
+    display:block;
+    margin:clamp(.25rem,1.4vh,.75rem) 0;
+    font-size:clamp(4.5rem,22vw,13rem);
+    font-weight:700;
+    letter-spacing:-.02em;
+    color:var(--text);
+  }
+  .wordmark__fest{
+    display:block;
+    font-size:clamp(1rem,4.4vw,2.25rem);
+    font-weight:500;
+    letter-spacing:.42em;
+    text-indent:.42em;
+    color:var(--teal);
+  }
+
+  .tagline{
+    margin:clamp(1.5rem,5vh,2.5rem) auto 0;
+    max-width:34rem;
+    font-size:clamp(.875rem,2.4vw,1.0625rem);
+    line-height:1.6;
+    color:var(--muted);
+  }
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    margin-top:clamp(1.75rem,5vh,2.75rem);
+    padding:.875rem 1.75rem;
+    border-radius:999px;
+    background:var(--teal);
+    color:#0B0E10;
+    font-size:clamp(.875rem,2.2vw,1rem);
+    font-weight:600;
+    letter-spacing:.01em;
+    text-decoration:none;
+    transition:background-color .2s ease,transform .2s ease;
+  }
+  .cta:hover{background:var(--teal-hover);}
+  .cta:active{transform:translateY(1px);}
+  .cta:focus-visible{
+    outline:2px solid var(--teal-light);
+    outline-offset:4px;
+  }
+  .cta svg{
+    flex:none;
+    width:.875em;
+    height:.875em;
+  }
+
+  .footer{
+    margin:clamp(2.25rem,7vh,3.5rem) 0 0;
+    font-size:clamp(.6875rem,1.8vw,.8125rem);
+    letter-spacing:.06em;
+    color:var(--footer);
+  }
+
+  @media (max-width:24.5rem){
+    .eyebrow{letter-spacing:.2em;text-indent:.2em;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .ring{animation:none;opacity:.1;transform:scale(.75);}
+    .cta{transition:none;}
+    .cta:active{transform:none;}
+  }
+</style>
+</head>
+<body>
+  <main>
+    <div class="rings" aria-hidden="true">
+      <span class="ring ring--1"></span>
+      <span class="ring ring--2"></span>
+    </div>
+
+    <div class="content">
+      <p class="eyebrow">Business · Entrepreneurship · Education</p>
+
+      <h1 class="wordmark">
+        <span class="wordmark__the">The</span>
+        <span class="wordmark__biz">BIZ</span>
+        <span class="wordmark__fest">Fest</span>
+      </h1>
+
+      <p class="tagline">Where business, entrepreneurship, and education meet.</p>
+
+      <a class="cta" href="https://www.linkedin.com/in/mauricio-barajas-209739428" target="_blank" rel="noopener noreferrer">
+        Connect on LinkedIn
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4.5 11.5 11.5 4.5"/>
+          <path d="M5.5 4.5h6v6"/>
+        </svg>
+      </a>
+
+      <p class="footer">© 2026 The BIZ Fest</p>
+    </div>
+  </main>
+</body>
+</html>
